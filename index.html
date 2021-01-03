@@ -10,14 +10,15 @@
 </head>
 <body>
 	<br>
-	<center><h3>Peruse the News</h3></center>
-	<center><h5>Search the <a href="https://www.gdeltproject.org/">global news</a> on any topic and for any timespan</h5></center>
-	<br>
-	<form id="gdeltQuery" class="form-inline mx-auto" style="width: 50%; left: 10%;">
-		<input id="queryInput" class="form-control mb-5" type="text" name="query" placeholder="Query (ex: Covid)">
-		<input id="timespanInput" class="form-control mb-5" type="text" name="timespan" placeholder="Timespan (ex: '6M' for past 6 months)">
-		<input type="submit" class="btn btn-primary ml-2 mb-5" value="Submit">
-	</form>
+	<left><h3 style="margin: 3%;">Peruse the News</h3></left>
+	<left><h5 style="margin: 3%;">Search the <a href="https://www.gdeltproject.org/">global news</a> on any topic and for any timespan</h5></left>
+	<div id="container" style="margin: 3%;">
+		<form id="gdeltQuery" class="form-inline mx-auto">
+			<input id="queryInput" class="form-control mb-5" type="text" name="query" placeholder="Query (ex: Covid)">
+			<input id="timespanInput" class="form-control mb-5" type="text" name="timespan" placeholder="Timespan (ex: '6M' for past 6 months)">
+			<input type="submit" class="btn btn-primary ml-2 mb-5" value="Submit">
+		</form>
+	</div>
 
 
 	<ul id="photoWall" class="list-group mx-auto mb-5"></ul>
