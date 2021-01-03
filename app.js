@@ -44,6 +44,8 @@ function requestGDELTQuery(query, timespan){
         // Parse API data into JSON
         const data = JSON.parse(this.response);
 
+        embedVolline(query, timespan)
+        embedToneline(query, timespan)
         embedPhotoWall(query, timespan);
         listArticles(data);
 
@@ -52,6 +54,50 @@ function requestGDELTQuery(query, timespan){
     // Send the request to the server
     xhr.send();
     
+}
+
+function embedVolline(query, timespan) {
+
+    // Remove previous results if any
+    var ul = document.getElementById('volLine');
+      if (ul) {
+        while (ul.firstChild) {
+          ul.removeChild(ul.firstChild);
+        }
+      }
+
+    // Update iframe
+    const urlGallery = `https://api.gdeltproject.org/api/v2/doc/doc?format=html&timespan=${timespan}&query=${query}&mode=TimelineVolInfo&TIMELINESMOOTH=5`
+    let ulGallery = document.getElementById('volLine');
+    let liGallery = document.createElement('li');
+    liGallery.classList.add('list-group-item');
+
+    liGallery.innerHTML = (`
+        <iframe src="${urlGallery}" title="test" width="100%" height="400px" frameborder="0" scrolling="yes"></iframe>
+    `);
+    ulGallery.appendChild(liGallery);
+}
+
+function embedToneline(query, timespan) {
+
+    // Remove previous results if any
+    var ul = document.getElementById('toneLine');
+      if (ul) {
+        while (ul.firstChild) {
+          ul.removeChild(ul.firstChild);
+        }
+      }
+
+    // Update iframe
+    const urlGallery = `https://api.gdeltproject.org/api/v2/doc/doc?format=html&timespan=${timespan}&query=${query}&mode=TimelineTone&TIMELINESMOOTH=5`
+    let ulGallery = document.getElementById('toneLine');
+    let liGallery = document.createElement('li');
+    liGallery.classList.add('list-group-item');
+
+    liGallery.innerHTML = (`
+        <iframe src="${urlGallery}" title="test" width="100%" height="400px" frameborder="0" scrolling="yes"></iframe>
+    `);
+    ulGallery.appendChild(liGallery);
 }
 
 function embedPhotoWall(query, timespan) {
@@ -75,6 +121,7 @@ function embedPhotoWall(query, timespan) {
     `);
     ulGallery.appendChild(liGallery);
 }
+
 
 function listArticles(data) {
 
