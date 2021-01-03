@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>GitHub API</title>
+
+	<!-- Import the Bootstrap CSS CDN -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+</head>
+<body>
+	<br>
+	<center><h3>Peruse the News</h3></center>
+	<center><h5>Search the <a href="https://www.gdeltproject.org/">global news</a> on any topic and for any timespan</h5></center>
+	<br>
+	<form id="gdeltQuery" class="form-inline mx-auto" style="width: 50%; left: 10%;">
+		<input id="queryInput" class="form-control mb-5" type="text" name="query" placeholder="Query (ex: Covid)">
+		<input id="timespanInput" class="form-control mb-5" type="text" name="timespan" placeholder="Timespan (ex: '6M' for past 6 months)">
+		<input type="submit" class="btn btn-primary ml-2 mb-5" value="Submit">
+	</form>
+
+
+	<ul id="photoWall" class="list-group mx-auto mb-5"></ul>
+	<ul id="queryResult" class="list-group mx-auto mb-5" style="width: 60%"></ul>
+	
+	<script src="app.js"></script>
+</body>
+</html>
