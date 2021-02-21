@@ -31,7 +31,7 @@ function requestGDELTQuery(query, timespan){
     const xhr = new XMLHttpRequest();
     
     // API endpoint
-    const url = `https://api.gdeltproject.org/api/v2/doc/doc?format=json&timespan=${timespan}&query=${query}&mode=Artlist&SORT=HybridRel`;
+    const url = `https://api.gdeltproject.org/api/v2/doc/doc?format=json&timespan=${timespan}&query=${query}&mode=Artlist&SORT=HybridRel&sourcecountry:US&sourcelang:english`;
    
     // Open a new connection, using a GET request via URL endpoint
     // Providing 3 arguments (GET/POST, The URL, Async True/False)
@@ -67,7 +67,7 @@ function embedVolline(query, timespan) {
       }
 
     // Update iframe
-    const urlGallery = `https://api.gdeltproject.org/api/v2/doc/doc?format=html&timespan=${timespan}&query=${query}&mode=TimelineVolInfo&TIMELINESMOOTH=5`
+    const urlGallery = `https://api.gdeltproject.org/api/v2/doc/doc?format=html&timespan=${timespan}&query=${query}&mode=TimelineVolInfo&TIMELINESMOOTH=5&sourcecountry:US&sourcelang:english`
     let ulGallery = document.getElementById('volLine');
     let liGallery = document.createElement('li');
     liGallery.classList.add('list-group-item');
@@ -89,7 +89,7 @@ function embedToneline(query, timespan) {
       }
 
     // Update iframe
-    const urlGallery = `https://api.gdeltproject.org/api/v2/doc/doc?format=html&timespan=${timespan}&query=${query}&mode=TimelineTone&TIMELINESMOOTH=5`
+    const urlGallery = `https://api.gdeltproject.org/api/v2/doc/doc?format=html&timespan=${timespan}&query=${query}&mode=TimelineTone&TIMELINESMOOTH=5&sourcecountry:US&sourcelang:english`
     let ulGallery = document.getElementById('toneLine');
     let liGallery = document.createElement('li');
     liGallery.classList.add('list-group-item');
@@ -111,7 +111,7 @@ function embedPhotoWall(query, timespan) {
       }
 
     // Update iframe
-    const urlGallery = `https://api.gdeltproject.org/api/v2/doc/doc?format=html&timespan=${timespan}&query=${query}&mode=ArtGallery&SORT=HybridRel`;
+    const urlGallery = `https://api.gdeltproject.org/api/v2/doc/doc?format=html&timespan=${timespan}&query=${query}&mode=ArtGallery&SORT=HybridRel&sourcecountry:US&sourcelang:english`;
     let ulGallery = document.getElementById('photoWall');
     let liGallery = document.createElement('li');
     liGallery.classList.add('list-group-item');
